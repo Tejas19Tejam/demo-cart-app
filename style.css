@@ -142,6 +142,7 @@ input[type="radio"] {
   border-radius: var(--border-radius-tiny);
   place-content: center center;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .btn__radio[type="radio"] {

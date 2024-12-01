@@ -1,10 +1,10 @@
 const cartBody = document.querySelector(".card__body");
+const btnRadioDefault = document.querySelector(".default_check");
 
 function handleClickItem(e) {
   const bodyElm = e.target.closest(".card__body");
   const selectedCartItem = e.target.closest(".card__item");
   const selectedBtnRadio = selectedCartItem.querySelector(".btn__radio");
-  console.log("ok");
 
   // Get array of all carts element
   const cartItems = Array.from(bodyElm.children);
@@ -22,5 +22,13 @@ function handleClickItem(e) {
   selectedBtnRadio.checked = true;
 }
 
+// Function to reset selection on page load
+function resetSelection() {
+  btnRadioDefault.checked = true;
+}
+
 // Adding click event listener to each cart item in the NodeList
 cartBody.addEventListener("click", handleClickItem);
+
+// Reset cart when the page loads
+document.addEventListener("DOMContentLoaded", resetSelection);
